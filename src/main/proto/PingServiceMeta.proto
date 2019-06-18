@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.grpc.ping.proto;
+
+message PingRequest {
+    string source = 1;
+}
+
+message PingResponse {
+    string url = 1;
+    int64 ts = 2;
+    string page = 3;
+}
+
+message PingRequests {
+    repeated PingRequest requests = 1;
+}
+
+service PingService {
+    rpc ping(PingRequest) returns (PingResponse) {}
+
+    rpc pingServerStream(PingRequests) returns (stream PingResponse) {}
+
+    rpc pingBidiStream(stream PingRequest) returns (stream PingResponse) {}
+}

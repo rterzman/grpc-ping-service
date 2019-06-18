@@ -1,0 +1,16 @@
+grpc:
+  port: 6565
+  enableReflection: true
+
+managed:
+  channel:
+    host: localhost
+    port: ${grpc.port}
+
+test:
+  ping:
+    sources:  kinogo.by, youtube.com, web-creator.ru, github.com, music.youtube.com, amazon.com, google.com, facebook.com, wikipedia.org,
+      instagram.com, www.netflix.com/ua/, microsoft.com, whatsapp.com, ebay.com, olx.ua, rozetka.com.ua, aliexpress.com, rst.ua, tsn.ua, default-source.com
+    default-source: default-source.com
+  instance:
+      mock: false

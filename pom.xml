@@ -9,6 +9,7 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.grpc.ping</groupId>
 	<artifactId>grpc-ping-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -39,32 +40,26 @@
 			<artifactId>grpc-spring-boot-starter</artifactId>
 			<version>${grpc-spring-boot-starter.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.12</version>
-			<scope>compile</scope>
+			<groupId>org.awaitility</groupId>
+			<artifactId>awaitility</artifactId>
+			<version>3.0.0</version>
+			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -88,6 +83,7 @@
 					<protocArtifact>com.google.protobuf:protoc:3.5.1-1:exe:${os.detected.classifier}</protocArtifact>
 					<pluginId>grpc-java</pluginId>
 					<pluginArtifact>io.grpc:protoc-gen-grpc-java:1.16.1:exe:${os.detected.classifier}</pluginArtifact>
+<!--					<outputDirectory>${project.build.directory}/src/main/com/grpc/ping/proto</outputDirectory>-->
 				</configuration>
 				<executions>
 					<execution>

@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class URLPageInfo {
+    private final String url;
     private final long responseTime;
-    private final String pageSource;
+    private final String responseText;
 }

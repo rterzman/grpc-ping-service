@@ -1,1 +1,21 @@
+spring:
+  application:
+    name: ping-service
 
+grpc:
+  port: 6565
+
+url:
+  connection:
+      content-type: text/html; charset=utf-8
+      connection-time-out: 0
+      read-time-out: 0
+
+logging:
+  level:
+    root: info
+
+managed:
+  channel:
+      host: localhost
+      port: ${grpc.port}
