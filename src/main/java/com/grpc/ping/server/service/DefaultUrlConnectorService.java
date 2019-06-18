@@ -47,6 +47,8 @@ public class DefaultUrlConnectorService implements UrlConnectorService {
 
         final URLConnection urlConnection = new URL(url).openConnection();
         urlConnection.setRequestProperty("Content-Type", connectionProperties.getContentType());
+        urlConnection.setConnectTimeout(connectionProperties.getConnectionTimeOut());
+        urlConnection.setReadTimeout(connectionProperties.getReadTimeOut());
 
         stopWatch.stop();
         return URLConnectionWithResponseTime.builder()

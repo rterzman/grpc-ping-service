@@ -8,8 +8,8 @@ grpc:
 url:
   connection:
       content-type: text/html; charset=utf-8
-      connection-time-out: 0
-      read-time-out: 0
+      connection-time-out: 3000
+      read-time-out: 10000
 
 logging:
   level:

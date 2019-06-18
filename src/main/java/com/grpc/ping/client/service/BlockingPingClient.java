@@ -13,9 +13,13 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Slf4j
-@AllArgsConstructor
 public class BlockingPingClient {
     private final PingServiceGrpc.PingServiceBlockingStub blockingServiceStub;
+
+    public BlockingPingClient(PingServiceGrpc.PingServiceBlockingStub blockingServiceStub) {
+        this.blockingServiceStub = blockingServiceStub;
+    }
+
 
     public Optional<PingResponse> pingSource(String source) {
         log.info("Sending request, source={}", source);
@@ -23,6 +27,7 @@ public class BlockingPingClient {
     }
 
     public List<PingResponse> streamPingSource(List<String> sources) {
+        log.info("Sending requests, sources=[{}]", sources);
         final PingRequests.Builder requestsBuilder = PingRequests.newBuilder();
         sources.forEach(source -> requestsBuilder.addRequests(PingRequest.newBuilder().setSource(source).build()));
 

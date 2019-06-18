@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {GrpcPingServiceApplication.class, PingTestConfiguration.class})
-public class GrpcPingServiceApplicationTests {
+public abstract class GrpcPingServiceApplicationTests {
 
     @Value("${test.ping.sources}")
     protected List<String> pingSources;
@@ -24,7 +24,6 @@ public class GrpcPingServiceApplicationTests {
     @Test
     public void contextLoads() {
     }
-
 
     protected void checkResponses(List<PingResponse> responses) {
         responses.forEach(

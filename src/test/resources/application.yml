@@ -7,6 +7,12 @@ managed:
     host: localhost
     port: ${grpc.port}
 
+url:
+  connection:
+    content-type: text/html; charset=utf-8
+    connection-time-out: 3000
+    read-time-out: 10000
+
 test:
   ping:
     sources:  kinogo.by, youtube.com, web-creator.ru, github.com, music.youtube.com, amazon.com, google.com, facebook.com, wikipedia.org,
